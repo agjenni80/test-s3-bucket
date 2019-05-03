@@ -9,6 +9,7 @@ variable "aws_region" {
 
 variable "bucket_name" {
    description = "ajennings-govcloud"
+   default = "ajennings-govcloud"
 }
 
 variable "bucket_acl" {
