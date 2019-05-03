@@ -19,12 +19,11 @@ variable "bucket_acl" {
 
 provider "aws" {
   region = "${var.aws_region}"
-}
 
 endpoints {
-  s3             = "s3-us-gov-west-1.amazonaws.com"
+  s3     = "s3-us-gov-west-1.amazonaws.com"
   } 
-
+}
 resource "aws_s3_bucket" "bucket" {
   bucket = "${var.bucket_name}"
   acl    = "${var.bucket_acl}" 
@@ -44,7 +43,7 @@ resource "aws_s3_bucket" "bucket" {
   }
   
   logging {
-    target_bucket = "amanda-bucket"
+    target_bucket = "ajennings-ptfe"
   }
   
   tags {
