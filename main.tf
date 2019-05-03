@@ -14,7 +14,7 @@ variable "bucket_name" {
 
 variable "bucket_acl" {
    description = "ACL for S3 bucket: private, public-read, public-read-write, etc"
-   default = "private"
+   default = "public-read"
 }
 
 provider "aws" {
@@ -36,7 +36,7 @@ resource "aws_s3_bucket" "bucket" {
  
   versioning {
     enabled = true
-    mfa_delete = true
+    mfa_delete = false
   }
   
   logging {
