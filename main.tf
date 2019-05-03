@@ -21,6 +21,10 @@ provider "aws" {
   region = "${var.aws_region}"
 }
 
+endpoints {
+  s3             = "s3-us-gov-west-1.amazonaws.com"
+  } 
+
 resource "aws_s3_bucket" "bucket" {
   bucket = "${var.bucket_name}"
   acl    = "${var.bucket_acl}" 
